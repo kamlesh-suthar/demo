@@ -12,7 +12,7 @@ class ReportDownloadService
     {
         try {
             $className = 'App\Services\Reports\ReportDownload' . ucfirst($format) . 'Service';
-            return (new $className)->download();
+            return (new $className())->download();
         } catch (\Exception $ex) {
             return abort(404, 'Download format not found');
         }
